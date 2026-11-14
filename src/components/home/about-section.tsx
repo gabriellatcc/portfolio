@@ -3,7 +3,8 @@ import {
     FaArrowDown,
     FaFileDownload,
 } from "react-icons/fa";
-import { TerminalDemo } from "@/components/terminal-demo"
+import { TerminalComponent } from "@/components/home/terminal"
+
 export function AboutSection() {
     return (
         <section
@@ -62,9 +63,7 @@ export function AboutSection() {
             </div>
 
             {/* Terminal Card */}
-            <TerminalDemo>
-                terminal
-            </TerminalDemo>
+            <TerminalComponent/>
         </section>
     );
 }

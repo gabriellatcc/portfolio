@@ -1,6 +1,6 @@
 import { Terminal } from "@/components/ui/terminal";
 
-export function TerminalDemo() {
+export function TerminalComponent() {
   return (
     <section className="w-full">
       <Terminal
