@@ -9,7 +9,7 @@ import {
     CardAction,
     CardContent
 } from "../ui/card";
-import { portfolioData } from "@/lib/site-content";
+import { portfolioData } from "@/lib/language/en-us";
 import { PiStudentBold } from "react-icons/pi";
 import { IconCalendar, IconAward, IconExternalLink, IconLanguage } from "@tabler/icons-react";
 

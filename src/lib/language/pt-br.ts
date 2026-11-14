@@ -1,0 +1,115 @@
+export const portfolioPtbr = {
+    title: "Desenvolvedora de Software Full-Stack & Estudante de ADS",
+    tagline: "Gabriella Tavares | Desenvolvedora Full-Stack",
+    availability: "Disponível para Oportunidades Full-Stack",
+    bio: "Especializada na construção de APIs RESTful robustas e interfaces web modernas e responsivas. Experiência com stacks atuais como Laravel (PHP 8.3), React / Next.js, TypeScript e deploys conteinerizados com Docker.",
+    location: "Cruzeiro/SP - Brasil",
+    terminalOverview: {
+        status: "Construindo sistemas backend e frontend limpos e escaláveis",
+        education: "Análise e Desenv. de Sistemas - FATEC (2024-2026)",
+    },
+    projects: {
+        metricnotes: {
+            title: "MetricNotes",
+            subtitle: "Trabalho de Conclusão de Curso (TCC)",
+            period: "Ago 2025 – Mai 2026",
+            description: "Plataforma web full-stack para gestão de produtividade e métricas de desempenho voltada a profissionais autônomos.",
+            fullDetails: [
+                "Projetei e construí uma API REST em Laravel (PHP 8.3) com autenticação JWT, camadas de serviço bem definidas, Form Requests customizados e políticas de autorização de acesso.",
+                "Implementei o frontend utilizando React e TypeScript (Vite, TanStack Router e Query, Tailwind, Radix UI, Recharts).",
+                "Configurei contêineres Docker isolados para o backend (Laravel/PHP) e o frontend (React/nginx).",
+                "Gerei código de cliente HTTP tipado automaticamente via Orval com base nas especificações OpenAPI.",
+            ],
+            badge: "TCC",
+        },
+        casamento: {
+            title: "Casamento Bruna & Alexandre",
+            subtitle: "Plataforma de Casamento & RSVP",
+            period: "Jun – Jul 2026",
+            description: "Aplicação web completa e personalizada com painel administrativo para gestão de convidados e lista de presentes.",
+            fullDetails: [
+                "API REST desenvolvida com Laravel 11 e MySQL, contando com autenticação JWT e autorização baseada em perfis.",
+                "Busca interativa de convidados, validação de presença (RSVP) e lista de presentes (reserva de itens físicos e contribuições simbólicas).",
+                "Painel administrativo dedicado com métricas detalhadas de confirmação de presença e contribuições.",
+            ],
+            badge: "Full Stack",
+        },
+        drechsler: {
+            title: "Plataforma Drechsler",
+            subtitle: "Plataforma Institucional",
+            period: "Mai – Jun 2026",
+            description: "Arquitetura web moderna com API Fastify, Prisma ORM e contratos de API automatizados via OpenAPI.",
+            fullDetails: [
+                "Solução web institucional full-stack com API REST em TypeScript construída com Fastify e Prisma ORM.",
+                "Integração com banco de dados PostgreSQL e controle preciso de migrações de schema.",
+                "Autenticação JWT para fluxos administrativos e documentação interativa completa com Swagger/OpenAPI.",
+            ],
+            badge: "TypeScript / Node",
+        },
+        poketeam: {
+            title: "PokeTeam Up",
+            subtitle: "Gerenciador de Equipes Pokémon",
+            period: "Nov – Dez 2025",
+            description: "Sistema interativo de montagem de equipes com integração à PokeAPI, slots arrastáveis (drag-and-drop) e estado em tempo real.",
+            fullDetails: [
+                "API REST backend escrita em Laravel (PHP 8.3), banco de dados MySQL, autenticação Sanctum e políticas de propriedade de itens.",
+                "Frontend desenvolvido com Next.js 15, TypeScript e Tailwind CSS v4.",
+                "Interface drag-and-drop para reordenação dos slots da equipe, componentes Radix para acessibilidade e TanStack Query para cache e gerenciamento de estado.",
+            ],
+            badge: "Next.js & API",
+        },
+    },
+    experiences: {
+        doctive: {
+            role: "Desenvolvedora Web Freelancer & Suporte Técnico",
+            period: "Mar 2026 – Presente",
+            location: "Remoto · Meio período / Sob demanda",
+            responsibilities: [
+                "Presto suporte técnico ponta a ponta e orientação operacional ao proprietário, solucionando problemas diários nos fluxos da plataforma, meios de pagamento e emissão de NF-e (Webmania).",
+                "Gerencio suporte à recuperação de contas, reestruturação de credenciais e Autenticação de Dois Fatores (2FA) em plataformas críticas (Hostinger, Microsoft, WordPress).",
+                "Configuro infraestrutura de e-mails transacionais (SMTP) e audito registros DNS (SPF, DKIM, DMARC) para resolver falhas de entregabilidade.",
+                "Desenvolvo scripts customizados em PHP/JS e integrações com APIs de terceiros para estender funcionalidades do WooCommerce, corrigindo inconsistências de checkout, cache e layout.",
+                "Realizo backups programados, auditoria de logs e atualizações testadas de compatibilidade para o core do WordPress, temas e plugins, documentando todas as intervenções para total rastreabilidade.",
+            ],
+        },
+        next: {
+            role: "Estagiária de Desenvolvimento Full-Stack",
+            period: "Jan 2026 – Abr 2026",
+            responsibilities: [
+                "Desenvolvi e refatorei APIs RESTful em Laravel para arquitetura modular desacoplada, configurando Cron Jobs para sincronização automatizada.",
+                "Projetei e implementei dashboards responsivos de métricas para clientes em React e TypeScript dentro dos prazos estabelecidos.",
+                "Apliquei boas práticas de Git para commits, pipelines e code reviews; configurei contêineres Docker em ambientes Linux para deploys consistentes.",
+            ],
+        },
+        liliane: {
+            role: "Assistente de Suporte Técnico",
+            period: "Abr 2019 – Dez 2024",
+            responsibilities: [
+                "Configurei a infraestrutura de hardware e software das estações de trabalho para operação em eventos sob prazos curtos.",
+                "Gerenciei documentação de atendimento, cronogramas e rastreabilidade de processos utilizando Microsoft Word e Excel.",
+                "Coletei feedback do público para redesenhar a sinalização dos equipamentos e o fluxo de trabalho, reduzindo significativamente os chamados de suporte operacional.",
+            ],
+        },
+    },
+    education: {
+        degree: "Análise e Desenvolvimento de Sistemas",
+        period: "Fev 2024 – Presente (Ativo até 2028)",
+        details: "Disciplinas principais concluídas com matrícula ativa (elegível para estágios até 2028) e pronta para posições Full-Stack Júnior.",
+        relevantCoursework: [
+            "Banco de Dados",
+            "Estrutura de Dados",
+            "Programação Orientada a Objetos",
+            "Engenharia de Software (I, II e III)",
+            "Redes de Computadores",
+            "Segurança da Informação",
+            "Sistemas Distribuídos",
+            "Programação Web",
+        ],
+    },
+    languages: {
+        english: { name: "Inglês", level: "Intermediário" },
+        spanish: { name: "Espanhol", level: "Básico" },
+        russian: { name: "Russo", level: "Básico" },
+        portuguese: { name: "Português", level: "Nativo" },
+    },
+};

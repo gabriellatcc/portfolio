@@ -1,7 +1,7 @@
 import { Badge } from "@/components/spell-ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 
-import { portfolioData } from "@/lib/site-content";
+import { portfolioData } from "@/lib/language/en-us";
 import { IconFolder } from "@tabler/icons-react";
 
 export function ProjectsSection() {

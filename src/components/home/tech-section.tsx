@@ -1,5 +1,5 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { portfolioData } from "@/lib/site-content";
+import { portfolioData } from "@/lib/language/en-us";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IoLayersOutline } from "react-icons/io5";

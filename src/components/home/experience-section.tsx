@@ -1,6 +1,6 @@
 import { Timeline } from "@/components/aceternity-ui/timeline";
 import { Badge } from "@/components/spell-ui/badge";
-import { portfolioData } from "@/lib/site-content";
+import { portfolioData } from "@/lib/language/en-us";
 import { IconBriefcase } from "@tabler/icons-react";
 export function ExperienceSection() {
     const data = portfolioData.experiences.map((exp) => ({

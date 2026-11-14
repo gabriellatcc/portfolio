@@ -1,4 +1,4 @@
-import { portfolioData } from "@/lib/site-content";
+import { portfolioData } from "@/lib/language/en-us";
 import {
     FaArrowDown,
     FaFileDownload,
