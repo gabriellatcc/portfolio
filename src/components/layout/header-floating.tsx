@@ -9,6 +9,7 @@ import {
 } from "@tabler/icons-react";
 import { IoLayersOutline, IoLayers } from "react-icons/io5";
 import { PiStudentBold, PiStudentFill } from "react-icons/pi";
+import { LanguageSwitch } from "@/components/layout/language-switch"
 
 export default function FloatingNavDemo() {
   const navigationstyle = "h-4 w-4 text-foreground";
@@ -47,8 +48,9 @@ export default function FloatingNavDemo() {
   ];
 
   return (
-    <div className="w-full">
+    <div className="fixed top-6 inset-x-0 z-[5000] mx-auto flex max-w-fit items-center justify-center gap-2">
       <FloatingNav navItems={navItems} />
+      <LanguageSwitch />
     </div>
   );
 }

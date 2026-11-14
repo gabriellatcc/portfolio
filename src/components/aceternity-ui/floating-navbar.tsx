@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { cn } from "cn";
 import { ThemeSwitch } from "@/components/layout/theme-switch";
-
 export const FloatingNav = ({
   navItems,
   className,
@@ -10,17 +9,16 @@ export const FloatingNav = ({
     name: string;
     link: string;
     icon?: React.ReactNode;
-    activeIcon?: React.ReactNode; // Nova prop opcional
+    activeIcon?: React.ReactNode;
   }[];
   className?: string;
 }) => {
-  // Guarda qual link está selecionado (padrão: primeiro item)
   const [activeLink, setActiveLink] = useState(navItems[0]?.link || "#");
 
   return (
     <div
       className={cn(
-        "flex max-w-fit fixed top-6 inset-x-0 mx-auto z-[5000] items-center justify-center",
+        "flex max-w-fit items-center justify-center",
         className
       )}
     >
@@ -38,12 +36,11 @@ export const FloatingNav = ({
                 className={cn(
                   "relative flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-foreground",
                   isSelected
-                    ? "bg-accent text-foreground" // Estilo quando selecionado
+                    ? "bg-accent text-foreground"
                     : "text-muted-foreground"
                 )}
               >
                 <span className="block sm:hidden">
-                  {/* Se estiver selecionado e tiver activeIcon, mostra ele; senão mostra o icon normal */}
                   {isSelected && navItem.activeIcon
                     ? navItem.activeIcon
                     : navItem.icon}
@@ -55,7 +52,6 @@ export const FloatingNav = ({
         </div>
 
         <div className="h-5 w-px bg-border" />
-
         <div className="flex items-center pr-1">
           <ThemeSwitch />
         </div>
