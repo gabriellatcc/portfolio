@@ -1,5 +1,14 @@
-export const portfolioPtbr = {
-    title: "Desenvolvedora de Software Full-Stack & Estudante de ADS",
+import type { DeveloperProfile } from "@/lib/data";
+
+export const portfolioPtbr: DeveloperProfile = {
+    about: {
+        greeting: "Olá, eu sou",
+        bioIntro: "Especializada em APIs RESTful robustas e interfaces web modernas e responsivas. Experiência com stacks atuais como",
+        bioAnd: " e deploys conteinerizados com",
+        viewProjects: "Ver Projetos",
+        resumeInfo: "Informações do Currículo",
+    },
+        title: "Desenvolvedora de Software Full-Stack & Estudante de ADS",
     tagline: "Gabriella Tavares | Desenvolvedora Full-Stack",
     availability: "Disponível para Oportunidades Full-Stack",
     bio: "Especializada na construção de APIs RESTful robustas e interfaces web modernas e responsivas. Experiência com stacks atuais como Laravel (PHP 8.3), React / Next.js, TypeScript e deploys conteinerizados com Docker.",

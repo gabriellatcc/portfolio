@@ -6,73 +6,54 @@ import { SiTanstack, SiTailwindcss, SiVite, SiSwagger, SiPhp, SiDocker, SiHtml5 
 import { FaGitAlt } from "react-icons/fa";
 import { RiJavaLine, RiNextjsFill, RiReactjsLine } from "react-icons/ri";
 import { FcLinux } from "react-icons/fc";
-import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import type { IconType } from "react-icons";
 
-export interface Skill {
-    name: string;
-    category: "backend" | "frontend" | "tools";
-    icon: IconDefinition | IconType;
-    color: string;
-}
-
-export interface Project {
-    id: string;
+export interface ProjectText {
     title: string;
     subtitle: string;
     period: string;
     description: string;
     fullDetails: string[];
-    tools: string[];
-    techStack: string[];
     badge: string;
 }
 
-export interface WorkExperience {
+export interface ExperienceText {
     role: string;
-    company: string;
     period: string;
-    location: string;
+    location?: string;
     responsibilities: string[];
-    technologies?: string[];
 }
 
-export interface Education {
-    degree: string;
-    institution: string;
-    period: string;
-    details: string;
-    gpa: string;
-    relevantCoursework: string[];
-}
-
-export interface Language {
+export interface LanguageText {
     name: string;
     level: string;
-    percentage: number;
 }
 
 export interface DeveloperProfile {
+    about: {
+        greeting: string;
+        bioIntro: string;
+        bioAnd: string;
+        viewProjects: string;
+        resumeInfo: string;
+    };
     title: string;
     tagline: string;
     availability: string;
     bio: string;
     location: string;
-    email: string;
-    linkedin: string;
-    github: string;
     terminalOverview: {
         status: string;
-        coreStack: string[];
-        devops: string[];
         education: string;
-        gpa: string;
     };
-    skills: Skill[];
-    projects: Project[];
-    experiences: WorkExperience[];
-    education: Education;
-    languages: Language[];
+    projects: Record<"metricnotes" | "casamento" | "drechsler" | "poketeam", ProjectText>;
+    experiences: Record<"doctive" | "next" | "liliane", ExperienceText>;
+    education: {
+        degree: string;
+        period: string;
+        details: string;
+        relevantCoursework: string[];
+    };
+    languages: Record<"english" | "spanish" | "russian" | "portuguese", LanguageText>;
 }
 
 export const portfolioBaseData = {
@@ -139,6 +120,7 @@ export const portfolioBaseData = {
         liliane: {
             company: "Liliane Tavares FOTOGRAFIA",
             location: "Itanhandu, MG",
+            technologies: ["Microsoft Word", "Microsoft Excel", "Microsoft PowerPoint"],
         },
     },
     education: {

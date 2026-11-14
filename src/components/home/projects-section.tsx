@@ -1,11 +1,11 @@
 import { Badge } from "@/components/spell-ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 
-import { portfolioData } from "@/lib/language/en-us";
+import { usePortfolioData } from "@/providers/portfolio-provider";
 import { IconFolder } from "@tabler/icons-react";
 
 export function ProjectsSection() {
-  const { projects } = portfolioData;
+  const { projects } = usePortfolioData();
 
   return (
     <section id="projects" className="py-20">

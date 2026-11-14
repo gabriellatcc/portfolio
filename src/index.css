@@ -184,3 +184,12 @@
     @apply font-sans scroll-smooth;
   }
 }
+
+@keyframes lang-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-lang-fade {
+  animation: lang-fade 0.35s ease-out;
+}

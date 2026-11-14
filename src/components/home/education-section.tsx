@@ -9,13 +9,12 @@ import {
     CardAction,
     CardContent
 } from "../ui/card";
-import { portfolioData } from "@/lib/language/en-us";
+import { usePortfolioData } from "@/providers/portfolio-provider";
 import { PiStudentBold } from "react-icons/pi";
 import { IconCalendar, IconAward, IconExternalLink, IconLanguage } from "@tabler/icons-react";
 
 export function EducationSection() {
-    const { education, languages } = portfolioData;
-
+    const { education, languages } = usePortfolioData();
     return (
         <section className="space-y-4">
             <div className="space-y-1.5">

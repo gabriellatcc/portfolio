@@ -1,5 +1,5 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { portfolioData } from "@/lib/language/en-us";
+import { usePortfolioData } from "@/providers/portfolio-provider";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IoLayersOutline } from "react-icons/io5";
@@ -13,6 +13,7 @@ const categories = [
 
 export function SkillsSection() {
   const iconBoxClasses = `h-8 w-8 rounded border border-border p-1`;
+  const { skills } = usePortfolioData();
 
   return (
     <section id="skills">
@@ -50,7 +51,7 @@ export function SkillsSection() {
             className="mt-3 data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:slide-in-from-bottom-2 data-[state=active]:duration-300"
           >
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
-              {portfolioData.skills
+              {skills
                 .filter((s) => c.value === "all" || s.category === c.value)
                 .map((s, i) => {
                   const Icon = s.icon;

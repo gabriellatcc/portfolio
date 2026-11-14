@@ -1,9 +1,10 @@
 import { Timeline } from "@/components/aceternity-ui/timeline";
 import { Badge } from "@/components/spell-ui/badge";
-import { portfolioData } from "@/lib/language/en-us";
+import { usePortfolioData } from "@/providers/portfolio-provider";
 import { IconBriefcase } from "@tabler/icons-react";
 export function ExperienceSection() {
-    const data = portfolioData.experiences.map((exp) => ({
+    const { experiences } = usePortfolioData();
+    const data = experiences.map((exp)  => ({
         title: exp.period,
         content: (
         <div>

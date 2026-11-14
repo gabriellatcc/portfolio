@@ -1,4 +1,13 @@
-export const portfolioEnus = {
+import type { DeveloperProfile } from "@/lib/data";
+
+export const portfolioEnus: DeveloperProfile = {
+    about: {
+        greeting: "Hi, I'm",
+        bioIntro: "Specialized in building robust RESTful APIs and modern responsive web interfaces. Experienced with modern stacks such as",
+        bioAnd: ", and containerized deployments with",
+        viewProjects: "View Projects",
+        resumeInfo: "Resume Info",
+    },
     title: "Full-Stack Software Developer & Systems Analysis Student",
     tagline: "Gabriella Tavares | Full-Stack Developer",
     availability: "Available for Full-Stack Opportunities",
