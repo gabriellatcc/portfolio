@@ -44,7 +44,7 @@ export function ExperienceSection() {
         <section id="experience">
         <div className="border-b border-foreground/20 pb-3">
             <div className="flex items-center gap-3">
-            <IconBriefcase className="size-10 shrink-0 text-chart-2" />
+            <IconBriefcase className="size-10 shrink-0 text-chart-1" />
             <h2 className="text-3xl font-bold tracking-tight">Work Experience</h2>
             </div>
             <p className="text-muted-foreground">
