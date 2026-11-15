@@ -2,7 +2,7 @@ import { Terminal } from "@/components/ui/terminal";
 
 export function TerminalComponent() {
   return (
-    <section className="w-full">
+    <section className="w-min md:w-full">
       <Terminal
         commands={[
           "whoami",

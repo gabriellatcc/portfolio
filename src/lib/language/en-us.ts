@@ -1,4 +1,4 @@
-import type { DeveloperProfile } from "@/lib/data";
+import type { DeveloperProfile, NavigationInterface } from "@/lib/data";
 
 export const portfolioEnus: DeveloperProfile = {
     about: {
@@ -122,3 +122,36 @@ export const portfolioEnus: DeveloperProfile = {
         portuguese: { name: "Portuguese", level: "Native" },
     },
 };
+
+export const navigationEnus = {
+    home: {
+        title: "Home",
+        alttitle: null,
+        subtitle: null,
+        description: null,
+    },
+    experience: {
+        title: "Experience",
+        alttitle: "Work Experience",
+        subtitle: "Practical industry software engineering and technical support experience.",
+        description: null,
+    },
+    education: {
+        title: "Education",
+        alttitle: "Academic Background",
+        subtitle: "Formal training in computer science fundamentals, databases and scalable software design.",
+        description: ["Related Coursework", "Languages", "Communication & proficiency levels"],
+    },
+    projects: {
+        title: "Projects",
+        alttitle: "Featured Projects",
+        subtitle: "Full-stack web applications, REST APIs, and integrated architectures.",
+        description: null,
+    },
+    techStack: {
+        title: "Tech Stack",
+        alttitle: "Technical Stack & Skills",
+        subtitle: "Technologies, frameworks, databases, and tooling used in projects.",
+        description: ["All","Tools"],
+    },
+} satisfies Record<string, NavigationInterface>;

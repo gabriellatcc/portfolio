@@ -1,33 +1,33 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { usePortfolioData } from "@/providers/portfolio-provider";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IoLayersOutline } from "react-icons/io5";
 
-const categories = [
-  { value: "all", label: "All" },
-  { value: "backend", label: "Backend" },
-  { value: "frontend", label: "Frontend" },
-  { value: "tools", label: "Tools" },
-] as const;
-
 export function SkillsSection() {
-  const iconBoxClasses = `h-8 w-8 rounded border border-border p-1`;
-  const { skills } = usePortfolioData();
+  const { skills, navigation } = usePortfolioData();
+
+  const categories = [
+    { value: "all", label: navigation.techStack.description?.[0] },
+    { value: "backend", label: "Backend" },
+    { value: "frontend", label: "Frontend" },
+    { value: "tools", label:  navigation.techStack.description?.[1] },
+  ] as const;
+
+  const iconBoxClasses = "h-8 w-8 rounded border border-border p-1";
 
   return (
     <section id="skills">
       <Tabs defaultValue="all" className="w-full">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between border-b-1 border-foreground/20 pb-3">
-          <div className="space">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between border-b border-foreground/20 pb-3">
+          <div className="space-y-1.5">
             <div className="flex items-center gap-3">
               <IoLayersOutline className="size-10 shrink-0 text-chart-1" />
               <h2 className="text-3xl font-bold tracking-tight">
-                Technical Stack & Skills
+                {navigation.techStack.alttitle}
               </h2>
             </div>
             <p className="text-muted-foreground">
-              Technologies, frameworks, databases, and tooling used in projects.
+              {navigation.techStack.subtitle}
             </p>
           </div>
 

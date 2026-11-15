@@ -14,18 +14,18 @@ import { PiStudentBold } from "react-icons/pi";
 import { IconCalendar, IconAward, IconExternalLink, IconLanguage } from "@tabler/icons-react";
 
 export function EducationSection() {
-    const { education, languages } = usePortfolioData();
+    const { education, languages, navigation } = usePortfolioData();
     return (
         <section className="space-y-4">
             <div className="space-y-1.5">
                 <div className="flex items-center gap-3">
                     <PiStudentBold className="size-10 shrink-0 text-chart-1" />
                     <h2 className="text-3xl font-bold tracking-tight">
-                        Education
+                        {navigation.education.alttitle}
                     </h2>
                 </div>
                 <p className="text-muted-foreground">
-                    Academic background in software engineering, system architecture, and full-stack development.
+                    {navigation.experience.subtitle}
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -79,7 +79,7 @@ export function EducationSection() {
                     </CardContent>
                     <CardFooter className="flex flex-col items-start gap-2.5 border-t border-border/60 pt-4">
                         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                            Relevant Coursework
+                            {navigation.education.description?.[0]}
                         </p>
                         <div className="flex flex-wrap gap-1.5">
                             {education.relevantCoursework.map((course) => (
@@ -101,10 +101,10 @@ export function EducationSection() {
                             <IconLanguage className="size-6 text-chart-1" />
                             <div>
                                 <CardTitle className="text-xl font-bold leading-snug">
-                                    Languages
+                                    {navigation.education.description?.[1]}
                                 </CardTitle>
                                 <CardDescription className="text-sm font-medium text-muted-foreground">
-                                    Communication & proficiency levels
+                                    {navigation.education.description?.[2]}
                                 </CardDescription>
                             </div>
                         </div>

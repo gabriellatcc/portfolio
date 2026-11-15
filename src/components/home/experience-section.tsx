@@ -3,7 +3,7 @@ import { Badge } from "@/components/spell-ui/badge";
 import { usePortfolioData } from "@/providers/portfolio-provider";
 import { IconBriefcase } from "@tabler/icons-react";
 export function ExperienceSection() {
-    const { experiences } = usePortfolioData();
+    const { experiences, navigation } = usePortfolioData();
     const data = experiences.map((exp)  => ({
         title: exp.period,
         content: (
@@ -45,11 +45,13 @@ export function ExperienceSection() {
         <section id="experience">
         <div className="border-b border-foreground/20 pb-3">
             <div className="flex items-center gap-3">
-            <IconBriefcase className="size-10 shrink-0 text-chart-1" />
-            <h2 className="text-3xl font-bold tracking-tight">Work Experience</h2>
+                <IconBriefcase className="size-10 shrink-0 text-chart-1" />
+                <h2 className="text-3xl font-bold tracking-tight">
+                    {navigation.experience.alttitle}
+                </h2>
             </div>
             <p className="text-muted-foreground">
-            Practical industry software engineering and technical support experience.
+                {navigation.experience.subtitle}
             </p>
         </div>
         <Timeline data={data} />

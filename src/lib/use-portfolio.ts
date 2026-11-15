@@ -1,9 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { portfolioBaseData } from "@/lib/data";
-import { portfolioEnus } from "@/lib/language/en-us";
-import { portfolioPtbr } from "@/lib/language/pt-br";
-
-type Translation = typeof portfolioPtbr;
+import { portfolioBaseData, type DeveloperProfile, type NavigationInterface } from "@/lib/data";
+import { portfolioEnus, navigationEnus } from "@/lib/language/en-us";
+import { portfolioPtbr, navigationPtbr } from "@/lib/language/pt-br";
 
 function merge<B extends Record<string, object>, T extends Record<keyof B, object>>(
     base: B,
@@ -18,12 +16,16 @@ function merge<B extends Record<string, object>, T extends Record<keyof B, objec
 
 export function usePortfolio() {
     const { i18n } = useTranslation();
-    const t: Translation = i18n.language.startsWith("pt") ? portfolioPtbr : portfolioEnus;
+    const isPt = i18n.language.startsWith("pt");
+
+    const t: DeveloperProfile = isPt ? portfolioPtbr : portfolioEnus;
+    const nav: Record<string, NavigationInterface> = isPt ? navigationPtbr : navigationEnus;
     const s = portfolioBaseData;
 
     return {
         ...s,
         ...t,
+        navigation: nav,
         terminalOverview: { ...s.terminalOverview, ...t.terminalOverview },
         projects: merge(s.projects, t.projects),
         experiences: merge(s.experiences, t.experiences),

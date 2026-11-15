@@ -5,7 +5,7 @@ import { usePortfolioData } from "@/providers/portfolio-provider";
 import { IconFolder } from "@tabler/icons-react";
 
 export function ProjectsSection() {
-  const { projects } = usePortfolioData();
+  const { projects, navigation } = usePortfolioData();
 
   return (
     <section id="projects" className="py-20">
@@ -15,11 +15,11 @@ export function ProjectsSection() {
             <div className="flex items-center gap-3">
               <IconFolder className="size-10 shrink-0 text-chart-1" />
               <h2 className="text-3xl font-bold tracking-tight">
-                Featured Projects
+                {navigation.projects.alttitle}
               </h2>
             </div>
             <p className="text-muted-foreground">
-              Full-stack web applications, REST APIs, and integrated architectures.
+                {navigation.projects.subtitle}
             </p>
           </div>
           <TabsList className="h-auto w-full justify-start overflow-x-auto">

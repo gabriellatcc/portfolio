@@ -7,6 +7,12 @@ import { FaGitAlt } from "react-icons/fa";
 import { RiJavaLine, RiNextjsFill, RiReactjsLine } from "react-icons/ri";
 import { FcLinux } from "react-icons/fc";
 
+export interface NavigationInterface {
+    title: string,
+    alttitle: string | null,
+    subtitle: string | null,
+    description: string | string[] | null;
+}
 export interface ProjectText {
     title: string;
     subtitle: string;

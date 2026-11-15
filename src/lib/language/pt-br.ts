@@ -1,4 +1,4 @@
-import type { DeveloperProfile } from "@/lib/data";
+import type { DeveloperProfile, NavigationInterface } from "@/lib/data";
 
 export const portfolioPtbr: DeveloperProfile = {
     about: {
@@ -122,3 +122,36 @@ export const portfolioPtbr: DeveloperProfile = {
         portuguese: { name: "Português", level: "Nativo" },
     },
 };
+
+export const navigationPtbr = {
+    home: {
+        title: "Início",
+        alttitle: "",
+        subtitle: "",
+        description: null,
+    },
+    experience: {
+        title: "Experiência",
+        alttitle: "Experiência Profissional",
+        subtitle: "Experiência prática na indústria em engenharia de software e suporte técnico.",
+        description: null,
+    },
+    education: {
+        title: "Formação",
+        alttitle: "Formação Acadêmica",
+        subtitle: "Formação acadêmica em fundamentos de ciência da computação, bancos de dados e design de software escalável.",
+        description: ["Disciplinas Relevantes", "Idioma", "Comunicação e nível de proficiência"],
+    },
+    projects: {
+        title: "Projetos",
+        alttitle: "Projetos em Destaque",
+        subtitle: "Aplicações web full-stack, APIs REST e arquiteturas integradas.",
+        description: null,
+    },
+    techStack: {
+        title: "Tech Stack",
+        alttitle: "Stack Técnica e Habilidades",
+        subtitle: "Tecnologias, frameworks, bancos de dados e ferramentas utilizadas nos projetos.",
+        description: ["Todos","Ferramentas"],
+    },
+} satisfies Record<string, NavigationInterface>;
