@@ -25,9 +25,8 @@ export const portfolioEnus: DeveloperProfile = {
             description: "Full-stack web platform for productivity management and performance metrics designed for independent contractors.",
             fullDetails: [
                 "Designed and built a REST API in Laravel (PHP 8.3) with JWT authentication, clear service layers, custom Form Requests, and access authorization policies.",
-                "Implemented frontend using React and TypeScript (Vite, TanStack Router and Query, Tailwind, Radix UI, Recharts).",
-                "Configured isolated Docker containers for backend (Laravel/PHP) and frontend (React/nginx).",
-                "Generated typed HTTP client code automatically via Orval based on OpenAPI specifications.",
+                "Implemented frontend using React and TypeScript (Vite, TanStack Router and Query, Tailwind, Radix UI).",
+                "Configured isolated Docker containers for backend (Laravel/PHP) and frontend (React).",
             ],
             badge: "TCC Capstone",
         },
@@ -38,7 +37,7 @@ export const portfolioEnus: DeveloperProfile = {
             description: "Complete custom web application with administrative control for guest management and gift registry.",
             fullDetails: [
                 "REST API built with Laravel 11 and MySQL with JWT authentication and role-based authorization.",
-                "Interactive guest search, RSVP validation, and gift registry (physical item reservation & symbolic contributions).",
+                "Interactive guest search, RSVP validation, and gift registry.",
                 "Dedicated administrative dashboard detailing guest attendance stats and gift contributions.",
             ],
             badge: "Full Stack",
@@ -61,7 +60,7 @@ export const portfolioEnus: DeveloperProfile = {
             period: "Nov – Dec 2025",
             description: "Interactive team creation system with PokeAPI integration, drag-and-drop slots, and live state.",
             fullDetails: [
-                "Backend REST API written in Laravel (PHP 8.3), MySQL database, Sanctum authentication, and item ownership policies.",
+                "Backend REST API written in Laravel (PHP 8.3), MySQL database, Sanctum authentication.",
                 "Frontend created with Next.js 15, TypeScript, and Tailwind CSS v4.",
                 "Features drag-and-drop interface for team slot reordering, Radix primitives for accessibility, and TanStack Query for cache & state management.",
             ],
@@ -146,7 +145,7 @@ export const navigationEnus = {
         title: "Projects",
         alttitle: "Featured Projects",
         subtitle: "Full-stack web applications, REST APIs, and integrated architectures.",
-        description: null,
+        description: "Preview",
     },
     techStack: {
         title: "Tech Stack",

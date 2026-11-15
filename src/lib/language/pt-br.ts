@@ -25,9 +25,8 @@ export const portfolioPtbr: DeveloperProfile = {
             description: "Plataforma web full-stack para gestão de produtividade e métricas de desempenho voltada a profissionais autônomos.",
             fullDetails: [
                 "Projetei e construí uma API REST em Laravel (PHP 8.3) com autenticação JWT, camadas de serviço bem definidas, Form Requests customizados e políticas de autorização de acesso.",
-                "Implementei o frontend utilizando React e TypeScript (Vite, TanStack Router e Query, Tailwind, Radix UI, Recharts).",
-                "Configurei contêineres Docker isolados para o backend (Laravel/PHP) e o frontend (React/nginx).",
-                "Gerei código de cliente HTTP tipado automaticamente via Orval com base nas especificações OpenAPI.",
+                "Implementei o frontend utilizando React e TypeScript (Vite, TanStack Router e Query, Tailwind, Radix UI).",
+                "Configurei contêineres Docker isolados para o backend (Laravel/PHP) e o frontend (React).",
             ],
             badge: "TCC",
         },
@@ -38,7 +37,7 @@ export const portfolioPtbr: DeveloperProfile = {
             description: "Aplicação web completa e personalizada com painel administrativo para gestão de convidados e lista de presentes.",
             fullDetails: [
                 "API REST desenvolvida com Laravel 11 e MySQL, contando com autenticação JWT e autorização baseada em perfis.",
-                "Busca interativa de convidados, validação de presença (RSVP) e lista de presentes (reserva de itens físicos e contribuições simbólicas).",
+                "Busca interativa de convidados, validação de presença (RSVP) e lista de presentes.",
                 "Painel administrativo dedicado com métricas detalhadas de confirmação de presença e contribuições.",
             ],
             badge: "Full Stack",
@@ -61,7 +60,7 @@ export const portfolioPtbr: DeveloperProfile = {
             period: "Nov – Dez 2025",
             description: "Sistema interativo de montagem de equipes com integração à PokeAPI, slots arrastáveis (drag-and-drop) e estado em tempo real.",
             fullDetails: [
-                "API REST backend escrita em Laravel (PHP 8.3), banco de dados MySQL, autenticação Sanctum e políticas de propriedade de itens.",
+                "API REST backend escrita em Laravel (PHP 8.3), banco de dados MySQL, autenticação Sanctum.",
                 "Frontend desenvolvido com Next.js 15, TypeScript e Tailwind CSS v4.",
                 "Interface drag-and-drop para reordenação dos slots da equipe, componentes Radix para acessibilidade e TanStack Query para cache e gerenciamento de estado.",
             ],
@@ -146,7 +145,7 @@ export const navigationPtbr = {
         title: "Projetos",
         alttitle: "Projetos em Destaque",
         subtitle: "Aplicações web full-stack, APIs REST e arquiteturas integradas.",
-        description: null,
+        description: "Ver prévia",
     },
     techStack: {
         title: "Tecnologias",

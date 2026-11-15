@@ -20,7 +20,7 @@ export function ProjectsSection() {
   const [active, setActive] = useState<(typeof projects)[number] | null>(null);
 
   const autoplay = useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({ delay: 10000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export function ProjectsSection() {
                       className="hidden shrink-0 items-center gap-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 sm:inline-flex"
                     >
                       <IconPhoto className="size-4" />
-                      Ver telas
+                      {navigation.projects.description}
                     </button>
                   </div>
 
@@ -109,7 +109,7 @@ export function ProjectsSection() {
                     className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 sm:hidden"
                   >
                     <IconPhoto className="size-4" />
-                    Ver telas
+                    {navigation.projects.description}
                   </button>
                 </div>
               </CarouselItem>
