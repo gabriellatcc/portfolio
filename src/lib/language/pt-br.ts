@@ -140,7 +140,7 @@ export const navigationPtbr = {
         title: "Formação",
         alttitle: "Formação Acadêmica",
         subtitle: "Formação acadêmica em fundamentos de ciência da computação, bancos de dados e design de software escalável.",
-        description: ["Disciplinas Relevantes", "Idioma", "Comunicação e nível de proficiência"],
+        description: ["Disciplinas Relevantes", "Idioma", "Comunicação e nível de proficiência", "Visitar"],
     },
     projects: {
         title: "Projetos",

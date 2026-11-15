@@ -20,7 +20,7 @@ function RouteComponent() {
       <section id="education" className="scroll-mt-24">
         <EducationSection />
       </section>
-      <section id="projects" className="scroll-mt-24">
+      <section id="projects" className="mt-10 scroll-mt-24">
         <ProjectsSection />
       </section>
       <section id="tech-stack" className="scroll-mt-24">

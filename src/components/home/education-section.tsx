@@ -25,7 +25,7 @@ export function EducationSection() {
                     </h2>
                 </div>
                 <p className="text-muted-foreground">
-                    {navigation.experience.subtitle}
+                    {navigation.education.subtitle}
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -55,7 +55,7 @@ export function EducationSection() {
                                     />
                                 }
                             >
-                                Visit
+                                {navigation.education.description?.[3]}
                                 <IconExternalLink className="size-3.5" />
                             </Button>
                         </CardAction>

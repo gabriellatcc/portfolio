@@ -140,7 +140,7 @@ export const navigationEnus = {
         title: "Education",
         alttitle: "Academic Background",
         subtitle: "Formal training in computer science fundamentals, databases and scalable software design.",
-        description: ["Related Coursework", "Languages", "Communication & proficiency levels"],
+        description: ["Related Coursework", "Languages", "Communication & proficiency levels","Visit"],
     },
     projects: {
         title: "Projects",
