@@ -48,7 +48,7 @@ export function ProjectsSection() {
   }, [active]);
 
   return (
-    <section className="space-y-4">``
+    <section className="space-y-4">
       <div className="space-y-1.5">
         <div className="flex items-center gap-3">
           <IconFolder className="size-10 shrink-0 text-chart-1" />

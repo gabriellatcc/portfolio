@@ -16,7 +16,7 @@ export function SkillsSection() {
   const iconBoxClasses = "h-8 w-8 rounded border border-border p-1";
 
   return (
-    <section id="skills">
+    <section id="skills" className="pt-10">
       <Tabs defaultValue="all" className="w-full">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between border-b border-foreground/20 pb-3">
           <div className="space-y-1.5">
