@@ -12,6 +12,7 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { CardSpotlight } from "@/components/aceternity-ui/card-spotlight";
 
 export function ProjectsSection() {
   const { projects, navigation } = usePortfolioData();
@@ -68,50 +69,56 @@ export function ProjectsSection() {
           <CarouselContent>
             {projects.map((p) => (
               <CarouselItem key={p.id}>
-                <div className="flex flex-col space-y-4 rounded-xl border border-border bg-card/40 p-5 shadow-md sm:p-6">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h3 className="text-xl font-semibold sm:text-2xl">
-                        {p.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {p.subtitle} · {p.period}
-                      </p>
+                <CardSpotlight
+                  radius={250}
+                  color="var(--muted)"
+                  className="rounded-xl border-border bg-card/40 p-5 shadow-md sm:p-6"
+                >
+                  <div className="relative z-20 flex flex-col space-y-4">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="text-xl font-semibold sm:text-2xl">
+                          {p.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          {p.subtitle} · {p.period}
+                        </p>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => setActive(p)}
+                        className="hidden shrink-0 items-center gap-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 sm:inline-flex"
+                      >
+                        <IconPhoto className="size-4" />
+                        {navigation.projects.description}
+                      </button>
+                    </div>
+
+                    <p className="text-sm sm:text-base">{p.description}</p>
+
+                    <ul className="list-disc space-y-1 pl-5 text-sm sm:text-base">
+                      {p.fullDetails.map((d) => (
+                        <li key={d}>{d}</li>
+                      ))}
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2">
+                      {p.techStack.map((t) => (
+                        <Badge key={t} variant="blue">{t}</Badge>
+                      ))}
                     </div>
 
                     <button
                       type="button"
                       onClick={() => setActive(p)}
-                      className="hidden shrink-0 items-center gap-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 sm:inline-flex"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 sm:hidden"
                     >
                       <IconPhoto className="size-4" />
                       {navigation.projects.description}
                     </button>
                   </div>
-
-                  <p className="text-sm sm:text-base">{p.description}</p>
-
-                  <ul className="list-disc space-y-1 pl-5 text-sm sm:text-base">
-                    {p.fullDetails.map((d) => (
-                      <li key={d}>{d}</li>
-                    ))}
-                  </ul>
-
-                  <div className="flex flex-wrap gap-2">
-                    {p.techStack.map((t) => (
-                      <Badge key={t} variant="blue">{t}</Badge>
-                    ))}
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => setActive(p)}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 sm:hidden"
-                  >
-                    <IconPhoto className="size-4" />
-                    {navigation.projects.description}
-                  </button>
-                </div>
+                </CardSpotlight>
               </CarouselItem>
             ))}
           </CarouselContent>
