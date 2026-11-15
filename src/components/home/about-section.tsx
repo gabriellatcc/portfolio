@@ -16,7 +16,7 @@ export function AboutSection() {
             <div className="@container flex w-full min-w-0 flex-col items-center text-center lg:items-start lg:text-left">
                 <h1 className="mb-4 whitespace-nowrap font-extrabold leading-[1.08] tracking-tight text-foreground/95 text-[clamp(1.15rem,5.4cqw,3rem)] lg:text-[clamp(1.25rem,7.5cqw,3.1rem)]">
                     <HighlightedText
-                        delay={0.4}
+                        delay={1.9}
                         from="right"
                         className="[&>span:first-child]:bg-sidebar-primary [&>span:last-child]:mix-blend-normal"
                     >
@@ -24,7 +24,7 @@ export function AboutSection() {
                     </HighlightedText>
                     &nbsp;{rest.join(" ")}&nbsp;
                     <HighlightedText
-                        delay={0.4}
+                        delay={2.2}
                         from="bottom"
                         className="[&>span:first-child]:bg-sidebar-primary [&>span:last-child]:mix-blend-normal"
                     >
