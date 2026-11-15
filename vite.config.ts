@@ -3,11 +3,15 @@ import path from 'node:path'
 import { defineConfig } from 'vite'
 import tailwindcss from "@tailwindcss/vite"
 import { tanstackRouter } from '@tanstack/router-plugin/vite'
+import { imagetools } from 'vite-imagetools';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     tanstackRouter({ target: 'react', autoCodeSplitting: true }),
+    imagetools({
+      defaultDirectives: () => new URLSearchParams('format=webp&quality=80'),
+    }),
     react(),tailwindcss()],
   base: '/portfolio',//setting github pages
   resolve: {
