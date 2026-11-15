@@ -13,24 +13,24 @@ export function AboutSection() {
         id="about"
         className="grid grid-cols-1 items-center gap-10 py-10 sm:gap-12 lg:grid-cols-[1fr_1fr] lg:py-16"
     >
-        <div className="flex w-full flex-col items-center text-center lg:items-start lg:text-left">
-            <h1 className="mb-4 whitespace-nowrap font-extrabold leading-[1.08] tracking-tight text-foreground/95 text-[clamp(1.5rem,7.5vw,3.5rem)]">
-            <HighlightedText
+        <div className="flex w-full flex-col items-center px-4 text-center sm:px-6 lg:items-start lg:px-0 lg:text-left">
+            <h1 className="mb-4 whitespace-nowrap font-extrabold leading-[1.08] tracking-tight text-foreground/95 text-[clamp(1.15rem,4.8vw,3.5rem)]">
+                <HighlightedText
                 delay={0.4}
                 from="right"
-                // className="[&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-chart-4 [&>span:first-child]:via-primary [&>span:first-child]:to-chart-2 [&>span:last-child]:mix-blend-normal"
                 className="[&>span:first-child]:bg-sidebar-primary [&>span:last-child]:mix-blend-normal"
-            >
+                >
                 {first}
-            </HighlightedText>&nbsp;{rest.join(" ")}&nbsp;
-            <HighlightedText
+                </HighlightedText>
+                &nbsp;{rest.join(" ")}&nbsp;
+                <HighlightedText
                 delay={0.4}
                 from="bottom"
                 className="[&>span:first-child]:bg-sidebar-primary [&>span:last-child]:mix-blend-normal"
-            >
+                >
                 Gabriella Corrêa
-            </HighlightedText>
-        </h1>
+                </HighlightedText>
+            </h1>
             <p className="mb-5 text-lg font-medium text-foreground/90 sm:text-xl">
                 {title}
             </p>
