@@ -2,6 +2,7 @@ import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import { ArrowUpRight, Clock, Mail, MapPin } from 'lucide-react'
 import { SITE_CONFIG, CONTACT, LOCATION_CONFIG, LINKS } from '@/lib/data'
 import { usePortfolioData } from '@/providers/portfolio-provider'
+import pkg from '../../../package.json'
 
 const contactLinks = [
     { href: LINKS.email, label: CONTACT.email, Icon: Mail },
@@ -82,7 +83,14 @@ export function Footer() {
 
             <div className="border-t border-border">
                 <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col items-center gap-2 text-sm text-muted-foreground/60 md:flex-row md:justify-between">
-                    <p>© {new Date().getFullYear()} {SITE_CONFIG.author}. All rights reserved.</p>
+                    <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
+                        <p>© {new Date().getFullYear()} {SITE_CONFIG.author}. All rights reserved.</p>
+                        <span className="hidden sm:inline text-border">•</span>
+                        <span className="font-mono text-xs text-muted-foreground/80">
+                            v{pkg.version}
+                        </span>
+                    </div>
+
                     <div className="flex items-center gap-4">
                         {socialLinks.map(({ href, label, Icon }) => (
                             <a
