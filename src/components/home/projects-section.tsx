@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { CardSpotlight } from "@/components/aceternity-ui/card-spotlight";
-
+import { createPortal } from "react-dom";
 export function ProjectsSection() {
   const { projects, navigation } = usePortfolioData();
   const [api, setApi] = useState<CarouselApi>();
@@ -48,7 +48,7 @@ export function ProjectsSection() {
   }, [active]);
 
   return (
-    <section className="space-y-4">
+    <section className="space-y-4">``
       <div className="space-y-1.5">
         <div className="flex items-center gap-3">
           <IconFolder className="size-10 shrink-0 text-chart-1" />
@@ -143,61 +143,64 @@ export function ProjectsSection() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {active && (
-          <motion.div
-            key={active.id}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setActive(null)}
-            className="fixed inset-0 z-50 grid place-items-center bg-black/60 p-4 backdrop-blur-sm"
-          >
+      {createPortal(
+        <AnimatePresence>
+          {active && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-border bg-card p-6 shadow-xl"
+              key={active.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setActive(null)}
+              className="fixed inset-0 z-[100] grid place-items-center bg-black/60 px-4 py-5 backdrop-blur-sm"
             >
-              <button
-                type="button"
-                aria-label="Fechar"
-                onClick={() => setActive(null)}
-                className="absolute right-4 top-4 rounded-full bg-muted p-1.5 hover:bg-muted/70"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative max-h-full w-full max-w-3xl overflow-y-auto rounded-2xl border border-border bg-card p-6 shadow-xl"
               >
-                <IconX className="size-4" />
-              </button>
+                <button
+                  type="button"
+                  aria-label="Fechar"
+                  onClick={() => setActive(null)}
+                  className="absolute right-4 top-4 rounded-full bg-muted p-1.5 hover:bg-muted/70"
+                >
+                  <IconX className="size-4" />
+                </button>
 
-              <h3 className="pr-10 text-2xl font-semibold">{active.title}</h3>
-              <p className="mb-4 text-sm text-muted-foreground">
-                {active.subtitle} · {active.period}
-              </p>
+                <h3 className="pr-10 text-2xl font-semibold">{active.title}</h3>
+                <p className="mb-4 text-sm text-muted-foreground">
+                  {active.subtitle} · {active.period}
+                </p>
 
-              <div className="space-y-3">
-                {active.screens.desktop && (
-                  <img
-                    src={active.screens.desktop}
-                    alt={`${active.title} - desktop`}
-                    className="aspect-video w-full rounded-lg border border-border object-cover object-top"
-                  />
-                )}
-                <div className="grid grid-cols-3 gap-3">
-                  {active.screens.mobile.map((src, i) => (
+                <div className="space-y-3">
+                  {active.screens.desktop && (
                     <img
-                      key={src}
-                      src={src}
-                      alt={`${active.title} - mobile ${i + 1}`}
-                      loading="lazy"
-                      className="aspect-[9/19] w-full rounded-lg border border-border object-cover object-top"
+                      src={active.screens.desktop}
+                      alt={`${active.title} - desktop`}
+                      className="aspect-video w-full rounded-lg border border-border object-cover object-top"
                     />
-                  ))}
+                  )}
+                  <div className="grid grid-cols-3 gap-3">
+                    {active.screens.mobile.map((src, i) => (
+                      <img
+                        key={src}
+                        src={src}
+                        alt={`${active.title} - mobile ${i + 1}`}
+                        loading="lazy"
+                        className="aspect-[9/19] w-full rounded-lg border border-border object-cover object-top"
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </section>
   );
 }
