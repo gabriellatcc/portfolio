@@ -1,59 +1,74 @@
 import { usePortfolioData } from "@/providers/portfolio-provider";
 import { FaArrowDown, FaFileDownload } from "react-icons/fa";
 import { TerminalComponent } from "@/components/home/terminal"
+import HighlightedText from "@/components/spell-ui/highlighted-text";
+import { Button } from "@/components/ui/button";
 
 export function AboutSection() {
     const { about, title } = usePortfolioData();
+    const [first, ...rest] = about.greeting.split(" ");
+
     return (
-        <section
-            id="about"
-            className="grid grid-cols-1 items-center gap-12 py-10 lg:grid-cols-[1.15fr_0.85fr] lg:py-16 md:grid-rows-2"
-        >
-            <div>
-                <h1 className="mb-4 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.5rem]">
-                    {about.greeting}{" "}
-                    <span className="bg-gradient-to-r from-ring via-chart-1 to-primary bg-clip-text text-transparent">
-                        Gabriella
-                        <br />
-                        Corrêa
-                    </span>
-                </h1>
+    <section
+        id="about"
+        className="grid grid-cols-1 items-center gap-10 py-10 sm:gap-12 lg:grid-cols-[1fr_1fr] lg:py-16"
+    >
+        <div className="flex w-full flex-col items-center text-center lg:items-start lg:text-left">
+            <h1 className="mb-4 whitespace-nowrap text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.5rem] text-foreground/95">
+            <HighlightedText
+                delay={0.4}
+                from="right"
+                // className="[&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-chart-4 [&>span:first-child]:via-primary [&>span:first-child]:to-chart-2 [&>span:last-child]:mix-blend-normal"
+                className="[&>span:first-child]:bg-sidebar-primary [&>span:last-child]:mix-blend-normal"
+            >
+                {first}
+            </HighlightedText>&nbsp;{rest.join(" ")}&nbsp;
+            <HighlightedText
+                delay={0.4}
+                from="bottom"
+                className="[&>span:first-child]:bg-sidebar-primary [&>span:last-child]:mix-blend-normal"
+            >
+                Gabriella Corrêa
+            </HighlightedText>
+        </h1>
+            <p className="mb-5 text-lg font-medium text-foreground/90 sm:text-xl">
+                {title}
+            </p>
 
-                <p className="mb-5 text-lg font-medium text-foreground/90 sm:text-xl">
-                    {title}
-                </p>
+            <p className="mb-7 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                {about.bioIntro}{" "}
+                <span className="font-medium text-chart-2">Laravel (PHP 8.3)</span>
+                ,{" "}
+                <span className="font-medium text-chart-1">React / Next.js</span>
+                ,{" "}
+                <span className="font-medium text-chart-4">TypeScript</span>
+                {about.bioAnd}{" "}
+                <span className="font-semibold text-foreground">Docker</span>.
+            </p>
 
-                <p className="mb-7 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-                    {about.bioIntro}{" "}
-                    <span className="font-medium text-chart-2">Laravel (PHP 8.3)</span>
-                    ,{" "}
-                    <span className="font-medium text-chart-1">React / Next.js</span>
-                    ,{" "}
-                    <span className="font-medium text-chart-4">TypeScript</span>
-                    {about.bioAnd}{" "}
-                    <span className="font-semibold text-foreground">Docker</span>.
-                </p>
+            <div className="flex flex-wrap items-center justify-center gap-3.5 lg:justify-start">
+                <Button
+                    render={<a href="#projects" />}
+                    className="h-auto inline-flex items-center gap-2 rounded-xl bg-sidebar-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-shadow hover:bg-sidebar-primary/90 hover:shadow-lg"
+                >
+                    {about.viewProjects}
+                    <FaArrowDown className="text-xs" />
+                </Button>
 
-                <div className="flex flex-wrap items-center gap-3.5">
-                    <a
-                        href="#projects"
-                        className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_color-mix(in_oklch,var(--primary)_35%,transparent)] transition-all hover:bg-primary/90"
-                    >
-                        {about.viewProjects}
-                        <FaArrowDown className="text-xs" />
-                    </a>
-
-                    <a
-                        href="#experience"
-                        className="inline-flex items-center gap-2 rounded-xl border border-border bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground transition-colors hover:bg-accent hover:text-accent-foreground dark:bg-card"
-                    >
-                        <FaFileDownload className="text-ring" />
-                        {about.resumeInfo}
-                    </a>
-                </div>
+                <Button
+                    render={<a href="#experience" />}
+                    variant="secondary"
+                    className="h-auto inline-flex items-center gap-2 rounded-xl border border-border px-6 py-3 text-sm font-semibold shadow-md transition-shadow hover:shadow-lg"
+                >
+                    <FaFileDownload className="text-ring" />
+                    {about.resumeInfo}
+                </Button>
             </div>
+        </div>
 
+        <div className="mx-auto w-full max-w-2xl min-w-0 lg:max-w-none">
             <TerminalComponent />
-        </section>
-    );
+        </div>
+    </section>
+);
 }

@@ -10,7 +10,7 @@ export const Route = createFileRoute('/')({
 
 function RouteComponent() {
   return (
-    <div className="flex flex-col gap-2 p-3 pt-24">
+    <div className="flex flex-col gap-2 p-3 pt-20">
       <section id="about" className="scroll-mt-24">
         <AboutSection />
       </section>

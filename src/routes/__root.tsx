@@ -22,7 +22,7 @@ function RootLayout() {
                 <FloatingNavDemo />
                 <main
                     key={i18n.language}
-                    className="animate-lang-fade flex-1 w-full max-w-6xl mx-auto px-4 py-8"
+                    className="animate-lang-fade flex-1 w-full max-w-7xl mx-auto"
                 >
                     <Outlet />
                 </main>
