@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import { Badge } from "@/components/spell-ui/badge";
 import { usePortfolioData } from "@/providers/portfolio-provider";
-import { IconFolder } from "@tabler/icons-react";
+import { IconFolder, IconPhoto, IconX } from "@tabler/icons-react";
 import {
   type CarouselApi,
   Carousel,
@@ -16,15 +17,35 @@ export function ProjectsSection() {
   const { projects, navigation } = usePortfolioData();
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [active, setActive] = useState<(typeof projects)[number] | null>(null);
+
+  const autoplay = useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+
+  useEffect(() => {
+    if (!api) return;
+    if (active) autoplay.current.stop();
+    else autoplay.current.play();
+  }, [api, active]);
 
   useEffect(() => {
     if (!api) return;
     setCurrent(api.selectedScrollSnap());
     api.on("select", () => setCurrent(api.selectedScrollSnap()));
   }, [api]);
-  const autoplay = useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
-  );
+
+  useEffect(() => {
+    if (!active) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setActive(null);
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [active]);
+
   return (
     <section className="space-y-4">
       <div className="space-y-1.5">
@@ -47,8 +68,17 @@ export function ProjectsSection() {
           <CarouselContent>
             {projects.map((p) => (
               <CarouselItem key={p.id}>
-                <div className="space-y-4 rounded-xl border border-border bg-card/40 p-6 shadow-md">
-                  <div>
+                <div className="relative space-y-4 rounded-xl border border-border bg-card/40 p-6 shadow-md">
+                  <button
+                    type="button"
+                    onClick={() => setActive(p)}
+                    className="absolute right-6 top-6 inline-flex items-center gap-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
+                  >
+                    <IconPhoto className="size-4" />
+                    Ver telas
+                  </button>
+
+                  <div className="pr-28">
                     <h3 className="mt-2 text-2xl font-semibold">{p.title}</h3>
                     <p className="text-sm text-muted-foreground">
                       {p.subtitle} · {p.period}
@@ -92,6 +122,62 @@ export function ProjectsSection() {
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {active && (
+          <motion.div
+            key={active.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActive(null)}
+            className="fixed inset-0 z-50 grid place-items-center bg-black/60 p-4 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-border bg-card p-6 shadow-xl"
+            >
+              <button
+                type="button"
+                aria-label="Fechar"
+                onClick={() => setActive(null)}
+                className="absolute right-4 top-4 rounded-full bg-muted p-1.5 hover:bg-muted/70"
+              >
+                <IconX className="size-4" />
+              </button>
+
+              <h3 className="pr-10 text-2xl font-semibold">{active.title}</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
+                {active.subtitle} · {active.period}
+              </p>
+
+              <div className="space-y-3">
+                {active.screens.desktop && (
+                  <img
+                    src={active.screens.desktop}
+                    alt={`${active.title} - desktop`}
+                    className="aspect-video w-full rounded-lg border border-border object-cover object-top"
+                  />
+                )}
+                <div className="grid grid-cols-3 gap-3">
+                  {active.screens.mobile.map((src, i) => (
+                    <img
+                      key={src}
+                      src={src}
+                      alt={`${active.title} - mobile ${i + 1}`}
+                      loading="lazy"
+                      className="aspect-[9/19] w-full rounded-lg border border-border object-cover object-top"
+                    />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

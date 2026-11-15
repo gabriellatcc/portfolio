@@ -7,6 +7,25 @@ import { FaGitAlt } from "react-icons/fa";
 import { RiJavaLine, RiNextjsFill, RiReactjsLine } from "react-icons/ri";
 import { FcLinux } from "react-icons/fc";
 
+const allShots = import.meta.glob("@/assets/systems/*/*.png", {
+    eager: true,
+    query: "?url",
+    import: "default",
+}) as Record<string, string>;
+
+export interface ProjectScreens {
+    desktop?: string;
+    mobile: string[];
+}
+
+function getScreens(folder: string): ProjectScreens {
+    const [desktop, ...mobile] = Object.entries(allShots)
+        .filter(([path]) => path.includes(`/systems/${folder}/`))
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([, url]) => url);
+    return { desktop, mobile: mobile.slice(0, 3) };
+}
+
 export interface NavigationInterface {
     title: string,
     alttitle: string | null,
@@ -94,21 +113,25 @@ export const portfolioBaseData = {
     projects: {
         metricnotes: {
             id: "metricnotes",
+            screens: getScreens("metricnotes"),
             tools: ["VS Code", "Docker", "Apidog", "Figma", "Git"],
             techStack: ["Laravel", "PHP 8.3", "React", "TypeScript", "JWT", "Tailwind", "Recharts", "Docker"],
         },
         casamento: {
             id: "casamento",
+            screens: getScreens("rsvp"),
             tools: ["VS Code", "Apidog", "Docker"],
             techStack: ["Laravel 11", "MySQL", "JWT", "REST API", "Admin Panel"],
         },
         drechsler: {
             id: "drechsler",
+            screens: getScreens("drechsler"),
             tools: ["VS Code", "Swagger", "PostgreSQL"],
             techStack: ["TypeScript", "Fastify", "Prisma", "PostgreSQL", "React", "OpenAPI"],
         },
         poketeam: {
             id: "poketeam",
+            screens: getScreens("poketeamuo"),
             tools: ["VS Code", "Figma", "Postman", "Git"],
             techStack: ["Next.js 15", "TypeScript", "Tailwind 4", "Laravel", "PokeAPI", "TanStack Query"],
         },
