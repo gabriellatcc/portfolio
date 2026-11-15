@@ -1,4 +1,4 @@
-import type { DeveloperProfile, NavigationInterface } from "@/lib/data";
+import type { DeveloperProfile, NavigationInterface, SiteInterface } from "@/lib/data";
 
 export const portfolioPtbr: DeveloperProfile = {
     about: {
@@ -149,9 +149,28 @@ export const navigationPtbr = {
         description: null,
     },
     techStack: {
-        title: "Tech Stack",
-        alttitle: "Stack Técnica e Habilidades",
+        title: "Tecnologias",
+        alttitle: "Competências Técnicas",
         subtitle: "Tecnologias, frameworks, bancos de dados e ferramentas utilizadas nos projetos.",
         description: ["Todos","Ferramentas"],
     },
 } satisfies Record<string, NavigationInterface>;
+
+export const sitePtbr: SiteInterface = {
+    availability: "Disponível para novos projetos",
+    name: "Portfólio de GABRIELLA CORRÊA",
+    shortName: "Portfólio da GABRIELLA",
+    description: "Portfólio pessoal apresentando habilidades, projetos e experiências na área de tecnologia. O site oferece uma visão geral da minha trajetória profissional, domínio técnico e formação acadêmica, servindo como plataforma de conexão com recrutadores e colaboradores.",
+    mainDescription: "Bem-vindo(a) ao meu portfólio pessoal! Sou uma desenvolvedora apaixonada por tecnologia com foco na criação de soluções inovadoras.",
+    locationLabel: "Cruzeiro, SP - Brasil (LATAM)",
+    schedule: {
+        days: "Segunda - Sábado",
+        hours: "09:00 - 18:00 (GMT-3)",
+    },
+    footer: {
+        freelanceTitle: "Serviços Freelance",
+        freelanceBody: "Estou disponível para projetos freelance. Se você tem uma ideia ou projeto em mente, entre em contato por e-mail ou LinkedIn.",
+        contactTitle: "Entre em Contato",
+        contactBody: "Vamos nos conectar e conversar sobre como podemos trabalhar juntos.",
+    },
+};

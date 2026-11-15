@@ -10,41 +10,43 @@ import {
 import { IoLayersOutline, IoLayers } from "react-icons/io5";
 import { PiStudentBold, PiStudentFill } from "react-icons/pi";
 import { LanguageSwitch } from "@/components/layout/language-switch"
+import { usePortfolioData } from '@/providers/portfolio-provider'
 
 export default function FloatingNavDemo() {
+  const { navigation } = usePortfolioData();
+
   const navigationstyle = "h-4 w-4 text-foreground";
   const navItems = [
     {
-      name: "Home",
+      name: navigation.home.title,
       link: "#",
       icon: <IconHome className={navigationstyle} />,
       activeIcon: <IconHomeFilled className={navigationstyle} />,
     },
     {
-      name: "Experience",
+      name: navigation.experience.title,
       link: "#experience",
       icon: <IconBriefcase className={navigationstyle} />,
       activeIcon: <IconBriefcaseFilled className={navigationstyle} />,
     },
     {
-      name: "Education",
+      name: navigation.education.title,
       link: "#education",
       icon: <PiStudentBold className={navigationstyle} />,
       activeIcon: <PiStudentFill className={navigationstyle} />,
     },
     {
-      name: "Projects",
+      name: navigation.projects.title,
       link: "#projects",
       icon: <IconFolder className={navigationstyle} />,
       activeIcon: <IconFolderFilled className={navigationstyle} />,
     },
     {
-      name: "Tech Stack",
+      name: navigation.techStack.title,
       link: "#tech-stack",
       icon: <IoLayersOutline className={navigationstyle} />,
       activeIcon: <IoLayers className={navigationstyle} />,
     },
-    // currently readings io5 IoBookmarks io5 IoBookmarksOutline
   ];
 
   return (

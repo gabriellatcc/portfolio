@@ -1,4 +1,4 @@
-import type { DeveloperProfile, NavigationInterface } from "@/lib/data";
+import type { DeveloperProfile, NavigationInterface, SiteInterface } from "@/lib/data";
 
 export const portfolioEnus: DeveloperProfile = {
     about: {
@@ -155,3 +155,22 @@ export const navigationEnus = {
         description: ["All","Tools"],
     },
 } satisfies Record<string, NavigationInterface>;
+
+export const siteEnus: SiteInterface = {
+    availability: "Available for new projects",
+    name: "GABRIELLA CORRÊA'S portfolio",
+    shortName: "GABRIELLA's portfolio",
+    description: "A personal portfolio website showcasing skills, projects, and experience in the field of technology. The site provides an overview of my professional background, technical expertise, and educational achievements, serving as a platform to connect with potential employers and collaborators.",
+    mainDescription: "Welcome to my personal portfolio! I'm a passionate developer with a strong background in technology and a keen interest in creating innovative solutions.",
+    locationLabel: "Cruzeiro, SP - Brazil (LATAM)",
+    schedule: {
+        days: "Monday - Saturday",
+        hours: "9:00 AM - 6:00 PM (GMT-3)",
+    },
+    footer: {
+        freelanceTitle: "Freelance Services",
+        freelanceBody: "I am available for freelance work. If you have a project in mind, feel free to reach out to me via email or LinkedIn.",
+        contactTitle: "Get in Touch",
+        contactBody: "Let's connect and discuss how we can work together.",
+    },
+};

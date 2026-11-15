@@ -140,3 +140,45 @@ export const portfolioBaseData = {
         portuguese: { percentage: 100 },
     },
 } as const;
+
+export const SITE_CONFIG = {
+    author: "Gabriella Corrêa",
+    domain: "https://gabriellatcc.github.io/portfolio",
+} as const;
+
+export const CONTACT = {
+    email: "gabriellatccorrea@gmail.com",
+    linkedin: "https://www.linkedin.com/in/gabriellatccorrea/",
+    githubAlias: "gabriellatcc",
+    whatsapp: "5535992708720",
+} as const;
+
+export const LOCATION_CONFIG = {
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Cruzeiro%2C+SP%2C+Brazil",
+} as const;
+
+export const LINKS = {
+    email: `mailto:${CONTACT.email}`,
+    whatsapp: `https://wa.me/${CONTACT.whatsapp}`,
+    github: `https://github.com/${CONTACT.githubAlias}`,
+    linkedin: CONTACT.linkedin,
+} as const;
+
+export interface SiteInterface {
+    availability: string,
+    name: string;
+    shortName: string;
+    description: string;
+    mainDescription: string;
+    locationLabel: string;
+    schedule: {
+        days: string;
+        hours: string;
+    };
+    footer: {
+        freelanceTitle: string;
+        freelanceBody: string;
+        contactTitle: string;
+        contactBody: string;
+    };
+}
