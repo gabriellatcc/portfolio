@@ -13,7 +13,7 @@ export default defineConfig({
       defaultDirectives: () => new URLSearchParams('format=webp&quality=80'),
     }),
     react(),tailwindcss()],
-  base: '/portfolio',//setting github pages
+  base: '/portfolio/',//setting github pages
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),
