@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { portfolioBaseData, type DeveloperProfile, type NavigationInterface, type SiteInterface } from "@/lib/data";
+import { portfolioBaseData, type DeveloperProfile, type SiteInterface } from "@/lib/data";
 import { portfolioEnus, navigationEnus, siteEnus } from "@/lib/language/en-us";
 import { portfolioPtbr, navigationPtbr, sitePtbr } from "@/lib/language/pt-br";
 
