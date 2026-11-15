@@ -49,10 +49,15 @@ export default function FloatingNavDemo() {
     },
   ];
 
-  return (
-    <div className="fixed top-6 inset-x-0 z-[5000] mx-auto flex max-w-fit items-center justify-center gap-2">
-      <FloatingNav navItems={navItems} />
-      <LanguageSwitch />
+return (
+    <div className="fixed top-4 inset-x-0 z-[5000] mx-auto flex w-fit max-w-[calc(100vw-0.5rem)] items-center justify-center gap-1.5 sm:top-6 sm:gap-2">
+      <FloatingNav
+        navItems={navItems}
+        className="relative top-0 inset-x-auto mx-0 gap-0.5 px-2 py-1.5 [&_a]:px-2 sm:gap-4 sm:px-4 sm:py-2 sm:[&_a]:px-3"
+      />
+      <div className="shrink-0">
+        <LanguageSwitch />
+      </div>
     </div>
   );
 }

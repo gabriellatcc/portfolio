@@ -193,3 +193,8 @@
 .animate-lang-fade {
   animation: lang-fade 0.35s ease-out;
 }
+.fluid-title,
+.fluid-title * {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}

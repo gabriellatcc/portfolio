@@ -10,7 +10,7 @@ function RootLayout() {
     const { i18n } = useTranslation();
 
     return (
-        <div className="relative min-h-screen flex flex-col text-foreground">
+        <div className="relative min-h-screen flex flex-col overflow-x-hidden text-foreground">
             <Rays
                 backgroundColor="transparent"
                 intensity={5}
@@ -22,7 +22,7 @@ function RootLayout() {
                 <FloatingNavDemo />
                 <main
                     key={i18n.language}
-                    className="animate-lang-fade flex-1 w-full max-w-6xl mx-auto"
+                    className="animate-lang-fade flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6"
                 >
                     <Outlet />
                 </main>
