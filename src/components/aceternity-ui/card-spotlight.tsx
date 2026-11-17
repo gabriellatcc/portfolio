@@ -6,7 +6,7 @@ import {
   type ReactNode,
 } from "react";
 import { cn } from "cn";
-
+import { CanvasRevealEffect } from "./canvas-reveal-effect";
 export const CardSpotlight = ({
   children,
   radius = 350,
