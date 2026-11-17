@@ -5,7 +5,6 @@ import {
   type MouseEvent as ReactMouseEvent,
   type ReactNode,
 } from "react";
-import { CanvasRevealEffect } from "@/components/aceternity-ui/canvas-reveal-effect";
 import { cn } from "cn";
 
 export const CardSpotlight = ({
