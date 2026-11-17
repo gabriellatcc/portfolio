@@ -54,6 +54,7 @@ export const portfolioEnus: DeveloperProfile = {
             ],
             badge: "TypeScript / Node",
         },
+<<<<<<< HEAD
         // poketeam: {
         //     title: "PokeTeam Up",
         //     subtitle: "Pokémon Team Manager",
@@ -66,6 +67,8 @@ export const portfolioEnus: DeveloperProfile = {
         //     ],
         //     badge: "Next.js & API",
         // },
+=======
+>>>>>>> 1e0b89d (refactor: comment out poketeam project details in data files)
     },
     experiences: {
         doctive: {

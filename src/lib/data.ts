@@ -129,12 +129,6 @@ export const portfolioBaseData = {
             tools: ["VS Code", "Swagger", "PostgreSQL"],
             techStack: ["TypeScript", "Fastify", "Prisma", "PostgreSQL", "React", "OpenAPI"],
         },
-        // poketeam: {
-        //     id: "poketeam",
-        //     screens: getScreens("poketeamuo"),
-        //     tools: ["VS Code", "Figma", "Postman", "Git"],
-        //     techStack: ["Next.js 15", "TypeScript", "Tailwind 4", "Laravel", "PokeAPI", "TanStack Query"],
-        // },
     },
     experiences: {
         doctive: {

@@ -54,18 +54,6 @@ export const portfolioPtbr: DeveloperProfile = {
             ],
             badge: "TypeScript / Node",
         },
-        // poketeam: {
-        //     title: "PokeTeam Up",
-        //     subtitle: "Gerenciador de Equipes Pokémon",
-        //     period: "Nov – Dez 2025",
-        //     description: "Sistema interativo de montagem de equipes com integração à PokeAPI, slots arrastáveis (drag-and-drop) e estado em tempo real.",
-        //     fullDetails: [
-        //         "API REST backend escrita em Laravel (PHP 8.3), banco de dados MySQL, autenticação Sanctum.",
-        //         "Frontend desenvolvido com Next.js 15, TypeScript e Tailwind CSS v4.",
-        //         "Interface drag-and-drop para reordenação dos slots da equipe, componentes Radix para acessibilidade e TanStack Query para cache e gerenciamento de estado.",
-        //     ],
-        //     badge: "Next.js & API",
-        // },
     },
     experiences: {
         doctive: {
