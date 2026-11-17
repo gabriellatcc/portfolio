@@ -70,7 +70,7 @@ export interface DeveloperProfile {
         status: string;
         education: string;
     };
-    projects: Record<"metricnotes" | "casamento" | "drechsler" | "poketeam", ProjectText>;
+    projects: Record<"metricnotes" | "casamento" | "drechsler", ProjectText>;
     experiences: Record<"doctive" | "next" | "liliane", ExperienceText>;
     education: {
         degree: string;
